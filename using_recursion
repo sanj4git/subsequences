@@ -1,0 +1,15 @@
+def subsequences(question_list, length, solution_list, index):
+
+    if index == length:
+        print(solution_list)
+        return
+
+    # Take
+    solution_list.append(question_list[index])
+    subsequences(question_list, length, solution_list, index + 1)
+
+    # Not Take
+    solution_list.pop()
+    subsequences(question_list, length, solution_list, index + 1)
+
+subsequences([7,1,2], 3, [], 0)
